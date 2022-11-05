@@ -1,0 +1,32 @@
+{
+  "name": "22-f-cow-princessdiary",
+  "version": "1.0.0",
+  "description": "22-F-Cow 2학기 프로젝트",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrincessGirls/22-F-Cow-PrincessDiary.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrincessGirls/22-F-Cow-PrincessDiary/issues"
+  },
+  "homepage": "https://github.com/PrincessGirls/22-F-Cow-PrincessDiary#readme",
+  "dependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/node": "^7.20.2",
+    "core-js": "^3.26.0",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/preset-env": "^7.20.2"
+  }
+}
