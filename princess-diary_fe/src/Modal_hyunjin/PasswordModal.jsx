@@ -20,7 +20,7 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal() {
+export default function PasswordModal() {
     const theme = createTheme({
         palette: {
           primary: {
