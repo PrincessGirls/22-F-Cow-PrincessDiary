@@ -1,9 +1,18 @@
+import logo from './logo.svg';
+import './App.css';
 import React from 'react';
-import WritePage from './writepage_sebin/writepage';
+import MainPage from './MainPage_gahyun/MainPage';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-   <WritePage />
+    <div className='App'>
+      <Router>
+        <Routes>
+          <Route path='/diary' element={<MainPage />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

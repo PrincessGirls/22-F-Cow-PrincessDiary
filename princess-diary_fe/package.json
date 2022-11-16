@@ -5,14 +5,30 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+<<<<<<< HEAD
     "@mui/material": "^5.10.13",
+=======
+<<<<<<< HEAD
+    "@mui/material": "^5.10.13",
+=======
+    "@mui/icons-material": "^5.10.9",
+    "@mui/lab": "^5.0.0-alpha.107",
+    "@mui/material": "^5.10.13",
+    "@mui/styled-engine-sc": "^5.10.6",
+>>>>>>> a23a4a00471fa142d51489c4452557f29abf9077
+>>>>>>> 8b0800a07fe80b9c427edb96dbe7b2e33228eeb8
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
     "react-icons": "^4.6.0",
+=======
+    "react-router-dom": "^6.4.3",
+>>>>>>> 8b0800a07fe80b9c427edb96dbe7b2e33228eeb8
     "react-scripts": "5.0.1",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
