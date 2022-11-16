@@ -184,7 +184,7 @@ function MainPage() {
               </Button>
             </Grid>
           </Grid>
-          <Button sx={{ position: 'absolute', bottom: 80, right: 200 }}>
+          <Button href="/write" sx={{ position: 'absolute', bottom: 80, right: 200 }}>
             <img src='../../images/pencil.png' width='70'></img>
           </Button>
         </Box>
