@@ -23,6 +23,7 @@ import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
+import Princessdiary from '../components/Princessdiary';
 
 // mui의 css 우선순위가 높기때문에 important를 설정 - 실무하다 보면 종종 발생 우선순위 문제
 // const FormHelperTexts = styled(FormHelperText)`
@@ -75,31 +76,7 @@ function MainPage() {
         }}
       >
         <CssBaseline />
-        <Box
-          sx={{
-            width: 760,
-            mt: 7,
-            display: 'flex',
-            flexDirection: 'row',
-            marginLeft: 10,
-            textAlign: 'center',
-            alignItems: 'center',
-            pl: 15,
-          }}
-        >
-          <img src='images/vector.png' width='50' height='65'></img>
-          <Typography
-            sx={{
-              ml: 2,
-              fontSize: 70,
-              fontWeight: 550,
-              color: 'secondary.main',
-              fontFamily: 'ABeeZee',
-            }}
-          >
-            Princess Diary
-          </Typography>
-        </Box>
+        <Princessdiary></Princessdiary>
         <Box
           sx={{
             mt: 2,
@@ -186,29 +163,29 @@ function MainPage() {
           <Grid container spacing={1}>
             <Grid item xs={3}>
               <Button sx={{ display: 'flex' }}>
-                <img src='images/folder.png' width='140'></img>
+                <img src='../../images/folder.png' width='140'></img>
               </Button>
             </Grid>
             <Grid item xs={3}>
               <Button sx={{ display: 'flex' }}>
-                <img src='images/folder.png' width='140'></img>
-              </Button>
-            </Grid>
-
-            <Grid item xs={3}>
-              <Button sx={{ display: 'flex' }}>
-                <img src='images/folder.png' width='140'></img>
+                <img src='../../images/folder.png' width='140'></img>
               </Button>
             </Grid>
 
             <Grid item xs={3}>
               <Button sx={{ display: 'flex' }}>
-                <img src='images/folder.png' width='140'></img>
+                <img src='../../images/folder.png' width='140'></img>
+              </Button>
+            </Grid>
+
+            <Grid item xs={3}>
+              <Button sx={{ display: 'flex' }}>
+                <img src='../../images/folder.png' width='140'></img>
               </Button>
             </Grid>
           </Grid>
           <Button sx={{ position: 'absolute', bottom: 80, right: 200 }}>
-            <img src='images/pencil.png' width='70'></img>
+            <img src='../../images/pencil.png' width='70'></img>
           </Button>
         </Box>
       </Box>
