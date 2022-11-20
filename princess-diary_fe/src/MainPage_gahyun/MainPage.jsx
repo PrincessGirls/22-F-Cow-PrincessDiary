@@ -1,19 +1,9 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import styled from 'styled-components';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
@@ -24,6 +14,7 @@ import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import Princessdiary from '../components/Princessdiary';
+import { FormControl } from '@mui/material';
 
 // mui의 css 우선순위가 높기때문에 important를 설정 - 실무하다 보면 종종 발생 우선순위 문제
 // const FormHelperTexts = styled(FormHelperText)`
@@ -65,6 +56,9 @@ function MainPage() {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+  };
+  const handleWrite = () => {
+    navigate('/write');
   };
 
   return (
@@ -184,7 +178,11 @@ function MainPage() {
               </Button>
             </Grid>
           </Grid>
-          <Button href="/write" sx={{ position: 'absolute', bottom: 80, right: 200 }}>
+          <Button
+            href='/write'
+            sx={{ position: 'absolute', bottom: 80, right: 200 }}
+            onClick={handleWrite}
+          >
             <img src='../../images/pencil.png' width='70'></img>
           </Button>
         </Box>
