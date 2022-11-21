@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import Princessdiary from '../components/Princessdiary';
 import { useRef, useState, useCallback } from 'react';
 import { FiKey } from 'react-icons/fi';
 import { BiUser, BiBookAlt, BiLock, BiLockOpen } from 'react-icons/bi';
@@ -59,7 +60,9 @@ const WritePage = () => {
   }
 
   return (
+    
     <div className='writepage'>
+      <Princessdiary></Princessdiary>
       <form onSubmit={onSubmit}>
         <div className='userInfo'>
           <BiUser />
