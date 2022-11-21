@@ -66,7 +66,7 @@ const WritePage = () => {
           <input
             placeholder='작성자'
             type='text'
-            name='user'
+            name='author'
             value={author} 
             onChange={handleAuthor}
             required
@@ -75,7 +75,7 @@ const WritePage = () => {
           <input 
             placeholder='제목'
             type='text'
-            name='user'
+            name='title'
             value={title} 
             onChange={handleTitle}
             required
@@ -83,7 +83,7 @@ const WritePage = () => {
           <FiKey />
           <input 
             type='password'
-            name='user'
+            name='password'
             value={password} 
             onChange={handlePassword}
             />
@@ -93,7 +93,7 @@ const WritePage = () => {
           <textarea
             ref={contentRef}
             value={content}
-            name='user'
+            name='content'
             onChange={handleContent}
             className='userform_textarea'
             required
