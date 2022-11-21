@@ -14,7 +14,8 @@ import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import Princessdiary from '../components/Princessdiary';
-import { FormControl } from '@mui/material';
+import Modal from '@mui/material/Modal';
+import PasswordModal from '../Modal_hyunjin/PasswordModal';
 
 // mui의 css 우선순위가 높기때문에 important를 설정 - 실무하다 보면 종종 발생 우선순위 문제
 // const FormHelperTexts = styled(FormHelperText)`
@@ -27,6 +28,18 @@ import { FormControl } from '@mui/material';
 // const Boxs = styled(Box)`
 //     padding-bottom: 40px !important;
 // `;
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  height: 400,
+  bgcolor: 'background.paper',
+  boxShadow: 24,
+  p: 4,
+};
 
 function MainPage() {
   // color, font 설정
@@ -60,6 +73,10 @@ function MainPage() {
   const handleWrite = () => {
     navigate('/write');
   };
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <ThemeProvider theme={theme}>
@@ -156,9 +173,19 @@ function MainPage() {
         >
           <Grid container spacing={1}>
             <Grid item xs={3}>
-              <Button sx={{ display: 'flex' }}>
+              <Button sx={{ display: 'flex' }} onClick={handleOpen}>
                 <img src='../../images/folder.png' width='140'></img>
               </Button>
+              <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby='modal-modal-title'
+                aria-describedby='modal-modal-description'
+              >
+                <Box sx={style}>
+                  <PasswordModal></PasswordModal>
+                </Box>
+              </Modal>
             </Grid>
             <Grid item xs={3}>
               <Button sx={{ display: 'flex' }}>

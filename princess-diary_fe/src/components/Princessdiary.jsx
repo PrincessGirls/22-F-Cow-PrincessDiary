@@ -21,7 +21,7 @@ function Princessdiary() {
           ml: 2,
           fontSize: 70,
           fontWeight: 550,
-          color: 'secondary.main',
+          color: '#7F8AAD',
           fontFamily: 'ABeeZee',
         }}
       >
