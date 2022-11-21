@@ -1,21 +1,51 @@
 import React from 'react';
-import FaUserEdit from 'react-icons/fa';
+import axios from "axios";
 import { useRef, useState, useCallback } from 'react';
 import { FiKey } from 'react-icons/fi';
 import { BiUser, BiBookAlt, BiLock, BiLockOpen } from 'react-icons/bi';
 import './writepage.css';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const WritePage = () => {
+  
   const contentRef = useRef();
-  const [content, setContent] = useState('');
+  const navigate = useNavigate();
+  const [author,setAuthor] = useState("");
+  const [password,setPassword] = useState("");
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   const [checked, setChecked] = useState(false);
 
-  const onChange = (event) => {
-    setContent(event.target.value);
+  const onSubmit = useCallback((e) => {
+    e.preventDefault();
+    axios.post("http://localhost:3000/write", {
+      "author":author, "password":password, "title":title, "content":content, "checked":checked
+    })
+    .then((res) => {
+        console.log(res.data);
+    })
+    .catch((e) => {
+      console.error(e);
+    })
+});
+
+  const handleAuthor = (e) => {
+    setAuthor(e.target.value);
   };
 
-  const onClick = (event) => {
+  const handleTitle = (e) => {
+    setTitle(e.target.value);
+  };
+
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleContent = (e) => {
+    setContent(e.target.value);
+  };
+
+  const handleChecked = () => {
     if (checked == true) {
       setChecked(false);
     } else {
@@ -23,43 +53,69 @@ const WritePage = () => {
     }
   };
 
-  const onSubmit = (event) => {};
+  const onClick = () => {
+    alert('Submit');
+    navigate('/');
+  }
+
   return (
     <div className='writepage'>
-      <div className='userInfo'>
-        <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>
+        <div className='userInfo'>
           <BiUser />
-          <input placeholder='작성자' type='text' />
+          <input
+            placeholder='작성자'
+            type='text'
+            name='user'
+            value={author} 
+            onChange={handleAuthor}
+            required
+            />
           <BiBookAlt />
-          <input placeholder='제목' type='text' />
+          <input 
+            placeholder='제목'
+            type='text'
+            name='user'
+            value={title} 
+            onChange={handleTitle}
+            required
+            />
           <FiKey />
-          <input type='password' />
-          <span onClick={onClick}>{checked ? <BiLock /> : <BiLockOpen />}</span>
-        </form>
-      </div>
-      <div className='userform'>
-        <form>
+          <input 
+            type='password'
+            name='user'
+            value={password} 
+            onChange={handlePassword}
+            />
+          <span onClick={handleChecked}>{checked ? <BiLock /> : <BiLockOpen />}</span>
+          </div>
+          <div className='userform'>
           <textarea
             ref={contentRef}
             value={content}
-            name='content'
-            onChange={onChange}
+            name='user'
+            onChange={handleContent}
             className='userform_textarea'
+            required
           >
             {content}
           </textarea>
           <div className=' userSubmit'>
             <button
-              onClick={() => {
-                alert('Submit');
-              }}
+              type="submit"
+              onClick={onClick}
             >
               Submit
             </button>
-            <button>Cancle</button>
+            <button
+              onClick={() => {
+                alert('취소');
+                navigate('/');
+              }}
+            >Cancle</button>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   );
 };
