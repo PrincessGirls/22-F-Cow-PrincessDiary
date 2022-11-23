@@ -66,7 +66,7 @@ function MainPage() {
   //useNavigate?! -> 페이지
 
   const [diarys, setDiarys] = useState([]);
-  const url = 'http://localhost:3001/diary';
+  const url = '/diary';
   useEffect(() => {
     axios
       .get(url)
@@ -196,10 +196,12 @@ function MainPage() {
                         justifyContent: 'space-between',
                       }}
                     >
-                       <Box sx={{color:'#8b6d67',
-                        fontSize:'20px'}}>{diary.author}</Box>
-                      <Box sx={{color:'#8b6d67',
-                        fontSize:'20px'}}>{diary.title}</Box>
+                      <Box sx={{ color: '#8b6d67', fontSize: '20px' }}>
+                        {diary.author}
+                      </Box>
+                      <Box sx={{ color: '#8b6d67', fontSize: '20px' }}>
+                        {diary.title}
+                      </Box>
                     </Box>
                   </Box>
                 </Button>
