@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path='/' element={<MainPage />} />
           <Route path='/write' element={<WritePage />} />
-          <Route path='/diaryview' element={<DiaryView />}/>
+          <Route path='/diary/:id' element={<DiaryView />} />
         </Routes>
       </Router>
     </div>
