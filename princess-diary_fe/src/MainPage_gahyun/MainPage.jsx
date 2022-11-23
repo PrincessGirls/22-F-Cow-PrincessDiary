@@ -38,7 +38,6 @@ const style = {
   width: 400,
   height: 400,
   bgcolor: 'background.paper',
-  boxShadow: 24,
   p: 4,
 };
 
@@ -192,19 +191,20 @@ function MainPage() {
             {diarys.map((diary) => (
               <Grid item xs={3}>
                 <Button sx={{ display: 'flex' }} onClick={handleOpen}>
-                  {diary.author}
-                  <img src='../../images/folder.png' width='140'></img>
-                </Button>
-                <Modal
-                  open={open}
-                  onClose={handleClose}
-                  aria-labelledby='modal-modal-title'
-                  aria-describedby='modal-modal-description'
-                >
-                  <Box sx={style}>
-                    <PasswordModal></PasswordModal>
+                  <Box>
+                    <img src='../../images/folder.png' width='140'></img>
+                    <Box
+                      sx={{
+                        display: 'column',
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                      }}
+                    >
+                      <Box>{diary.author}</Box>
+                      <Box>{diary.title}</Box>
+                    </Box>
                   </Box>
-                </Modal>{' '}
+                </Button>
               </Grid>
             ))}
           </Grid>
