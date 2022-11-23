@@ -200,8 +200,10 @@ function MainPage() {
                         justifyContent: 'space-between',
                       }}
                     >
-                      <Box>{diary.author}</Box>
-                      <Box>{diary.title}</Box>
+                       <Box sx={{color:'#8b6d67',
+                        fontSize:'20px'}}>{diary.author}</Box>
+                      <Box sx={{color:'#8b6d67',
+                        fontSize:'20px'}}>{diary.title}</Box>
                     </Box>
                   </Box>
                 </Button>
