@@ -42,7 +42,7 @@ export default function PasswordModal() {
           비밀번호를 입력해주세요
         </Typography>
         <Box>
-          <Box sx={{ display: 'flex', alignItems: 'center', mt: 13, ml: 2 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', mt: 13, ml: 2,position: 'relative', left: '40px', width:'300px' }}>
             <Typography
               id='modal-modal-description'
               sx={{ color: '#997A73', fontWeight: 'bold' }}
@@ -58,7 +58,7 @@ export default function PasswordModal() {
             />
           </Box>
         </Box>
-        <Box sx={{ mt: 8, position: 'relative', left: '130px' }}>
+        <Box sx={{ mt: 8, position: 'relative', left: '165px', top:'50px', width:'100px' }}>
           <Stack spacing={2} direction='row'>
             <Button
               variant='contained'
