@@ -4,7 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
+import { useHref, useNavigate } from 'react-router-dom';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
@@ -89,10 +89,6 @@ function MainPage() {
   const handleWrite = () => {
     navigate('/write');
   };
-
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   return (
     <ThemeProvider theme={theme}>
@@ -190,7 +186,7 @@ function MainPage() {
           <Grid container spacing={1}>
             {diarys.map((diary) => (
               <Grid item xs={3}>
-                <Button sx={{ display: 'flex' }} onClick={handleOpen}>
+                <Button sx={{ display: 'flex' }} href={`/diary/${diary.id}`}>
                   <Box>
                     <img src='../../images/folder.png' width='140'></img>
                     <Box
