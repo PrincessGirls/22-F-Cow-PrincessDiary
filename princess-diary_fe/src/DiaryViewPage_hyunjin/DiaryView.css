@@ -56,7 +56,9 @@
 }
 
 .deleteEdit{
-    margin-left: 610px;
+    margin-left: 800px;
+    display: flex;
+    position:fixed;
 }
 
 .like *{
