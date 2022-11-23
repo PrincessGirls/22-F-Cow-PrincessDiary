@@ -16,6 +16,7 @@
     display: flex;
     height: 70px;
     margin-top: 30px;
+    
     text-align: center;
     justify-content: center;
 }
@@ -25,14 +26,15 @@
 }
 
 .userInfo svg{
-    font-size: 50px;
+    font-size: 60px;
     color: #CFADAD;  
 }
 
 .userInfo input {
-    margin-bottom: 25px;
-    margin-right: 50px;
-    font-size: large;
+    margin-bottom: 16px;
+    margin-right: 25px;
+    margin-left: 5px;
+    font-size: 20px;
     box-sizing: border-box;
     line-height: 1em;
     border: none;
