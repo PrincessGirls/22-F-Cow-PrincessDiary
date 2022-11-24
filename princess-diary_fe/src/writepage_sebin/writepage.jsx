@@ -1,12 +1,11 @@
 import React from 'react';
 import axios from "axios";
 import Princessdiary from '../components/Princessdiary';
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState} from 'react';
 import { FiKey } from 'react-icons/fi';
 import { BiUser, BiBookAlt, BiLock, BiLockOpen } from 'react-icons/bi';
-import './writepage.css';
+import './Writepage.css';
 import { useNavigate } from 'react-router-dom';
-import { FormGroup } from '@mui/material';
 
 const WritePage = () => {
   
@@ -18,9 +17,10 @@ const WritePage = () => {
   const [content, setContent] = useState("");
   const [checked, setChecked] = useState(false);
 
-  const onSubmit = useCallback(() => {
-    axios.post("http://localhost:3000/write", {
-      "author":author, "password":password, "title":title, "content":content, "checked":checked
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    await axios.post("/diary", {
+     author:author, password:password, title:title, content:content, checked:checked
     })
     .then((res) => {
         console.log(res.data);
@@ -30,23 +30,17 @@ const WritePage = () => {
       console.error(e);
       console.log("실패");
     })
-});
-
-  const handleAuthor = (e) => {
-    setAuthor(e.target.value);
+    alert('Submit');
+    navigate('/');
   };
 
-  const handleTitle = (e) => {
-    setTitle(e.target.value);
-  };
+  const handleAuthor = (e) => setAuthor(e.target.value);
 
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
+  const handleTitle = (e) => setTitle(e.target.value);
 
-  const handleContent = (e) => {
-    setContent(e.target.value);
-  };
+  const handlePassword = (e) => setPassword(e.target.value);
+
+  const handleContent = (e) => setContent(e.target.value);
 
   const handleChecked = () => {
     if (checked == true) {
@@ -56,23 +50,18 @@ const WritePage = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    alert('Submit');
-    navigate('/');
-  }
-
   const handleCancle = (e) => {
     e.preventDefault();
     alert('취소');
     navigate('/');
-  }
+  };
 
   return (
     
     <div className='writepage'>
       <Princessdiary></Princessdiary>
       <div className='userInfo'>
-        <form >
+        <form>
           <BiUser />
           <input
             placeholder='작성자'
@@ -116,8 +105,7 @@ const WritePage = () => {
           <div className="userSubmit">
             <button
               type="button"
-              onClick={handleSubmit}
-              onSubmit={onSubmit}
+              onClick={onSubmit}
             >
               Submit
             </button>
@@ -125,7 +113,7 @@ const WritePage = () => {
               type="button"
               onClick={handleCancle}
             >
-              Cancle
+              Cancel
             </button>
           </div>
         </form>

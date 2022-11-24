@@ -84,11 +84,11 @@ input:focus{
     margin-right: 10px;
     height: 55px;
     font-size: 22px;
-    border: 3px solid #CFADAD;
+    border: 3px #e9c8c8e3;
     border-radius: 20px;
     outline: none;
-    background-color: rgb(255, 255, 255);
-    color:  rgb(71, 71, 71);
+    background-color: #e9c8c8e3;
+    color:  rgb(255, 255, 255);
     width: 100px;
     text-align: center;
 }

@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import MainPage from './MainPage_gahyun/MainPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import WritePage from './writepage_sebin/writepage';
+import WritePage from './Writepage_sebin/Writepage';
 import PassWordModal from './Modal_hyunjin/PasswordModal';
 import DiaryView from './DiaryViewPage_hyunjin/DiaryView';
 
