@@ -28,5 +28,6 @@
   "devDependencies": {
     "@babel/cli": "^7.19.3",
     "@babel/preset-env": "^7.20.2"
-  }
+  },
+  "proxy": "http://localhost:3000"
 }
