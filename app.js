@@ -1,5 +1,6 @@
 import express from "express";
 const bodyParser = require("body-parser");
+import diary from "./diary.json";
 
 const app = express();
 const fs = require("fs");
@@ -27,24 +28,32 @@ app.get("/diary/:id", (req, res) => {
   res.send(data);
 });
 
-app.post("/diary", (req, res) => {
+app.post("/write", (req, res) => {
   const data = getWrite();
 
-  const { id, title, author, password, content } = req.body;
+  const postData = req.body;
 
-  const newWrite = {
-    id,
-    title,
-    author,
-    password,
-    content,
-  };
-
-  data.push(newWrite);
-
+  const lastUser = diary[diary.length - 1];
+  if (lastUser) {
+    data.push({
+      id: String(parseInt(lastUser.id) + 1),
+      title: postData.title,
+      author: postData.author,
+      content: postData.content,
+    });
+  } else {
+    data.push({
+      id: "1",
+      title: postData.title,
+      author: postData.author,
+      content: postData.content,
+    });
+  }
   setWrite([...data]);
-
-  res.send(req.body);
+  res.status(200).json({
+    status: "succes",
+    data: req.body,
+  });
 });
 
 const URL = __dirname + "/" + "diary.json";
