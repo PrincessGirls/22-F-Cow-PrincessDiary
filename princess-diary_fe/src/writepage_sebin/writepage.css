@@ -1,94 +1,96 @@
-@font-face {
-    font-family: 'IBMPlexSansKR-Medium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Medium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+/* @font-face {
+  font-family: "IBMPlexSansKR-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Medium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
-*{
-    font-family:'IBMPlexSansKR-Medium';
+* {
+  font-family: "IBMPlexSansKR-Medium";
 }
-.writepage{
-    width: 1000px;
-    margin: 0 auto;
-    text-align: center;
+.writepage {
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
 }
-.userInfo{
-    display: flex;
-    height: 70px;
-    margin-top: 30px;
-    
-    text-align: center;
-    justify-content: center;
+.userInfo {
+  display: flex;
+  height: 70px;
+  margin-top: 30px;
+
+  text-align: center;
+  justify-content: center;
+} */
+
+/* .userInfo form {
+  display: flex;
+} */
+
+/* .userInfo svg {
+  font-size: 60px;
+  color: #cfadad;
+} */
+
+/* .userInfo input {
+  margin-bottom: 16px;
+  margin-right: 25px;
+  margin-left: 5px;
+  font-size: 20px;
+  box-sizing: border-box;
+  line-height: 1em;
+  border: none;
+  border-bottom: 2px solid #cfadad;
+} */
+/* .userInfo span {
+  cursor: pointer;
 }
 
-.userInfo form{
-    display: flex;
+.userInfo input:nth-of-type(1) {
+  width: 150px;
 }
-
-.userInfo svg{
-    font-size: 60px;
-    color: #CFADAD;  
+.userInfo input:nth-of-type(3) {
+  width: 100px;
 }
-
-.userInfo input {
-    margin-bottom: 16px;
-    margin-right: 25px;
-    margin-left: 5px;
-    font-size: 20px;
-    box-sizing: border-box;
-    line-height: 1em;
-    border: none;
-    border-bottom: 2px solid #CFADAD;
+input:focus {
+  outline: none;
 }
-.userInfo span{
-    cursor: pointer;
+.userform {
+  margin-top: 20px;
 }
-
-.userInfo input:nth-of-type(1){
-    width: 150px;
+.userform textarea {
+  width: 800px;
+  height: 500px;
+  resize: none;
+  margin: 20px;
+  margin-top: 0;
+  border: 3px solid rgb(204, 202, 202);
+  background-color: rgb(233, 232, 232);
+  border-radius: 20px;
+} */
+/* .userform_textarea {
+  flex: 1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 25px;
+  height: 60px;
+  font-size: 17px;
+  font-weight: 700;
+  outline-color: rgb(163, 162, 162);
+} */
+/* .userSubmit {
+  text-align: right;
+  margin-right: 60px;
 }
-.userInfo input:nth-of-type(3){
-    width: 100px;
-}
-input:focus{
-    outline: none;
-}.userform{
-    margin-top: 20px;
-}
-.userform textarea{
-    width: 800px;
-    height: 500px;
-    resize: none;
-    margin: 20px;
-    margin-top: 0;
-    border: 3px solid rgb(204, 202, 202);
-    background-color:  rgb(233, 232, 232);
-    border-radius: 20px;
-}
-.userform_textarea{
-    flex: 1;
-    margin-top: 10px ;
-    margin-bottom: 10px;
-    padding: 25px;
-    height: 60px;
-    font-size: 17px;
-    font-weight: 700;
-    outline-color: rgb(163, 162, 162);
-}
-.userSubmit{
-    text-align: right;
-    margin-right: 60px;
-}
-.userSubmit button{
-    cursor: pointer;
-    margin-right: 10px;
-    height: 55px;
-    font-size: 22px;
-    border: 3px solid #CFADAD;
-    border-radius: 20px;
-    outline: none;
-    background-color: rgb(255, 255, 255);
-    color:  rgb(71, 71, 71);
-    width: 100px;
-    text-align: center;
-}
+.userSubmit button {
+  cursor: pointer;
+  margin-right: 10px;
+  height: 55px;
+  font-size: 22px;
+  border: 3px solid #cfadad;
+  border-radius: 20px;
+  outline: none;
+  background-color: rgb(255, 255, 255);
+  color: rgb(71, 71, 71);
+  width: 100px;
+  text-align: center;
+} */

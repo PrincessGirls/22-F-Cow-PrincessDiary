@@ -74,7 +74,7 @@ function MainPage() {
         console.log("보여주기 실패");
         console.log(error);
       });
-  }, []);
+  }, [navigate]);
   //일단 마운트와 언마운트에서만 이 함수가 실행되도록 설정
   const [value, setValue] = React.useState("1");
 
@@ -155,7 +155,7 @@ function MainPage() {
       >
         <Grid container spacing={2}>
           {diarys.map((diary) => (
-            <Grid item xs={12} md={6} lg={3}>
+            <Grid key={diary.id} item xs={12} md={6} lg={3}>
               <Button href={`/diary/${diary.id}`}>
                 <Box>
                   <Box
