@@ -1,28 +1,29 @@
-import React from 'react';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import React from "react";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 function Princessdiary() {
   return (
     <Box
       sx={{
-        width: 760,
         mt: 7,
-        display: 'flex',
-        flexDirection: 'row',
-        marginLeft: 10,
-        textAlign: 'center',
-        alignItems: 'center',
-        pl: 15,
+        display: "flex",
+        flexDirection: "row",
+        textAlign: "center",
+        alignItems: "center",
       }}
     >
-      <img src='../images/vector.png' width='50' height='65'></img>
+      <Box
+        component="img"
+        src="../images/vector.png"
+        sx={{ width: { xs: 30, md: 40, lg: 50 } }}
+        alt="king"
+      ></Box>
       <Typography
         sx={{
           ml: 2,
-          fontSize: 70,
           fontWeight: 550,
-          color: '#7F8AAD',
-          fontFamily: 'ABeeZee',
+          color: "#7F8AAD",
+          fontSize: { xs: "30px", md: "50px", lg: "70px" },
         }}
       >
         Princess Diary
