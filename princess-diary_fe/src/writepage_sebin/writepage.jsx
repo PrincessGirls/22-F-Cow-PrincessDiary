@@ -37,8 +37,6 @@ const WritePage = () => {
     setAuthor(e.target.value);
   };
 
-  const handleAuthor = (e) => setAuthor(e.target.value);
-
   const handleContent = (e) => {
     setContent(e.target.value);
   };
