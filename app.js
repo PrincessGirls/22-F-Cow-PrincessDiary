@@ -1,4 +1,5 @@
 import express from "express";
+import { uptime } from "process";
 const bodyParser = require("body-parser");
 import diary from "./diary.json";
 
@@ -26,6 +27,14 @@ app.get("/diary/:id", (req, res) => {
   const { id } = req.params;
   const data = getData().find((d) => d.id === id);
   res.send(data);
+});
+
+app.delete("/diary/:id", (req, res) => {
+  const { id } = req.params;
+  const data = getData();
+  const index = getData().findIndex((p) => p.id ===id)
+  data.splice(index,1);
+  setWrite([...data]);
 });
 
 app.post("/write", (req, res) => {
