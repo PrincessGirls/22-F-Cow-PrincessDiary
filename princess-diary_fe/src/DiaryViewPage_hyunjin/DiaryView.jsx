@@ -61,6 +61,20 @@ const DiaryView = () => {
       });
   }, []);
 
+  const onDelete = () =>{
+    axios.delete(url)
+    .then(function(response){
+        console.log(response);
+        console.log("삭제");
+    })
+    .catch(function(error){
+        console.log(error);
+        console.log("실패");
+
+    })
+    navigate("/");
+};
+
   return (
     <Card
       className="DiaryViewPage"
@@ -159,7 +173,7 @@ const DiaryView = () => {
               justifyContent: "right",
             }}
           >
-            <IconButton className="deleteEdit" onClick={handleOpen}>
+            <IconButton className="deleteEdit" onClick={onDelete}>
               <svg
                 width="50"
                 height="50"
