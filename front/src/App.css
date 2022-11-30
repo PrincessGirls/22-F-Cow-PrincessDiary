@@ -3,5 +3,5 @@
 .App {
   height: 100vh;
   text-align: center;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Noto Sans KR", sans-serif !important;
 }

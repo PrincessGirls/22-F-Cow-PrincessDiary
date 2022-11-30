@@ -75,7 +75,7 @@ function MainPage() {
         console.log(error);
       });
   }, [navigate]);
-  //일단 마운트와 언마운트에서만 이 함수가 실행되도록 설정
+
   const [value, setValue] = React.useState("1");
 
   const handleChange = (event, newValue) => {
