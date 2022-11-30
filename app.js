@@ -1,11 +1,106 @@
-import express from "express";
+import express from 'express';
+import { uptime } from 'process';
+const bodyParser = require('body-parser');
+import diary from './diary.json';
 
 const app = express();
+const fs = require('fs');
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+const router = express.Router();
+
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.get('/diary', (req, res) => {
+  const data = getWrite();
+  res.setHeader('Access-Control-Allow-origin', '*');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.json(data);
+  res.send('diary 실행');
+});
+
+app.get('/diary/:id', (req, res) => {
+  const { id } = req.params;
+  const data = getData().find((d) => d.id === id);
+  res.send(data);
+});
+
+app.delete('/diary/:id', (req, res) => {
+  const { id } = req.params;
+  const data = getData();
+  const index = getData().findIndex((p) => p.id === id);
+  data.splice(index, 1);
+  setWrite([...data]);
+  res.status(200).json({
+    status: 'succes',
+    data: req.body,
+  });
+});
+
+app.post('/write', (req, res) => {
+  const data = getWrite();
+
+  const postData = req.body;
+
+  const lastUser = diary[diary.length - 1];
+  if (lastUser) {
+    data.push({
+      id: String(parseInt(lastUser.id) + 1),
+      title: postData.title,
+      author: postData.author,
+      content: postData.content,
+    });
+  } else {
+    data.push({
+      id: '1',
+      title: postData.title,
+      author: postData.author,
+      content: postData.content,
+    });
+  }
+  setWrite([...data]);
+  res.status(200).json({
+    status: 'succes',
+    data: req.body,
+  });
+});
+
+app.put('/diary/:id', (req, res) => {
+  const data = getWrite();
+  console.log(data);
+  const postData = req.body;
+  console.log(postData);
+  console.log(postData.content);
+  const diary = data.find((d) => d.id === req.params.id);
+  // 입력 받은 id의 diary
+  diary.content = postData.content;
+  console.log(data);
+  setWrite([...data]);
+  res.status(200).json({
+    status: 'succes',
+    data: req.body,
+  });
+});
+
+const URL = __dirname + '/' + 'diary.json';
+
+function getData() {
+  return JSON.parse(fs.readFileSync(URL, 'utf8'));
+}
+
+function getWrite() {
+  return JSON.parse(fs.readFileSync(URL, 'utf8'));
+}
+function setWrite(newData) {
+  fs.writeFileSync(URL, JSON.stringify(newData), 'utf8');
+}
+
+module.exports = router;
+
+app.listen(5000, () => {
+  console.log('Server is running on port 5000');
 });
