@@ -13,7 +13,7 @@ import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
-import Princessdiary from "../components/Princessdiary";
+import Princessdiary from "./Header";
 import { useState, useEffect } from "react";
 import axios from "axios";
 // mui의 css 우선순위가 높기때문에 important를 설정 - 실무하다 보면 종종 발생 우선순위 문제
